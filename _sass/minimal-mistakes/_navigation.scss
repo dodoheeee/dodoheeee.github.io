@@ -84,7 +84,7 @@
       border-radius: 0;
 
       &:hover {
-        color: $link-color-hover;
+        color: #f45050;
       }
 
       &.current,
@@ -133,7 +133,7 @@
     border-radius: $border-radius;
 
     &:hover {
-      @include yiq-contrasted($muted-text-color);
+      @include yiq-contrasted($masthead-link-color-hover);
     }
 
     &:first-child {
@@ -513,7 +513,7 @@
   box-shadow: $box-shadow;
 
   .nav__title {
-    color: #fff;
+    color: #fcfcfc;
     font-size: $type-size-6;
     background: $primary-color;
     border-top-left-radius: $border-radius;
@@ -568,6 +568,6 @@
   }
 
   li ul li ul li ul li ul li ul > li a {
-    padding-left: 3.25rem
+    padding-left: 3.25rem;
   }
 }

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "리액트 select option 태그 경고 해결하기!"
+title: "리액트 select option 태그 경고 해결하기"
 subtitle: "리액트에서 마크업을 하게 된다면 알아야할 점!"
 tags: [리액트, 에러, 삽질]
 toc : true
