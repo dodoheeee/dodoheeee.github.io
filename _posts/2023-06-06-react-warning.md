@@ -10,7 +10,7 @@ toc : true
 <br/>
 
 
-<p align="center"  style="color:#8E99AB; font-size :18px">안녕하세요! 도라희몽 입니다! <br/>최근에 겪었던 리액트 warning 메세지에 대해서 알아보려고 합니다.<br/>
+<p align="center"  style="color:#8E99AB; font-size :18px">안녕하세요! 도도히 입니다! <br/>최근에 겪었던 리액트 warning 메세지에 대해서 알아보려고 합니다.<br/>
 사실 그냥 경고메세지라 넘어가도 되는데 console창에 빨간글씨를 못 참는 편이기 때문에...😅 <br/>
 블로그 타고타고 타고 다니다가 좀 바로 이해 되게 찾아본 블로그는 없어서 직접 정리해보았습니다!</p>
 
