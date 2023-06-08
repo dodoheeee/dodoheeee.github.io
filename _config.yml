@@ -24,7 +24,7 @@ description: "안녕하세요 도도히가 열심히 끄쩍끄적 쓰는 블로�
 url: "https://dodoheeee.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
 repository: # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser: "/assets/images/favicon-16x16.png"
+teaser: "/assets/images/dodo.png"
 logo: "/assets/images/favicon-16x16.png"
 masthead_title: # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs: true # true, false (default)
@@ -104,7 +104,7 @@ analytics:
 # Site Author
 author:
   name: "도도히"
-  avatar: "/assets/images/dohee.jpeg"
+  avatar: "/assets/images/dodo.png"
   bio: "열심히 끄적끄적 쓰고 있는 블로그입니다."
   location: "Paju-si, Gyeonggi-do"
   email: #hiyoun96@naver.com
