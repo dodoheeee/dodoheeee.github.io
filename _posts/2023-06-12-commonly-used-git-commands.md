@@ -10,7 +10,7 @@ sidebar:
     nav: "docs"
 sitemap: true
 header:
-  teaser: 
+  teaser: https://www.biteinteractive.com/wp-content/uploads/2021/05/git-vs-github.png
 
 ---
 
