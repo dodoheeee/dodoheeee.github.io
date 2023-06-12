@@ -16,6 +16,8 @@ docs:
         url: /categories/#react
       - title: "AWS"
         url: /categories/#aws
+      - title: "GIT"
+        url: /categories/#git
 
   # - title: "Sample Collections"
   #   url: /collection-archive/

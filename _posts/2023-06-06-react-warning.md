@@ -4,6 +4,8 @@ title: 리액트 select option 태그 경고 해결하기
 subtitle: 리액트에서 마크업을 하게 된다면 알아야할 점!
 tags: [리액트, 삽질]
 toc: true
+toc_label: "목차"
+toc_sticky : true
 categories: React
 author_profile: false
 sidebar:
