@@ -227,17 +227,23 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+post_archive:
+  type: liquid
+  path: /posts/
 # https://github.com/jekyll/jekyll-archives
 jekyll-archives:
   enabled:
     - categories
     - tags
+    - posts
   layouts:
     category: archive-taxonomy
     tag: archive-taxonomy
+    post: archive-taxonomy
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
+    post: /posts/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/

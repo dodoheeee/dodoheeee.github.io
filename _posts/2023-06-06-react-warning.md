@@ -2,9 +2,16 @@
 layout: single
 title: 리액트 select option 태그 경고 해결하기
 subtitle: 리액트에서 마크업을 하게 된다면 알아야할 점!
-tags: [리액트, 에러, 삽질]
-toc : true
-categories : dev
+tags: [리액트, 삽질]
+toc: true
+categories: React
+author_profile: false
+sidebar:
+    nav: "docs"
+sitemap: true
+header:
+  teaser: /assets/images/0606/1.png
+
 ---
 
 <br/>
@@ -35,7 +42,7 @@ categories : dev
 해석해보면 "경고: 'selected' 속성을 옵션에 설정하는 대신, `select` 요소에 'defaultValue' 또는 'value' props를 사용하세요."
 라는 뜻이다.
 
-![ex_screenshot](./../assets/images/0606/1.png)
+![ex_screenshot](/assets/images/0606/1.png)
 
 
 <br/>

@@ -1,5 +1,5 @@
 ---
-title : "Category"
+title : "Post"
 layout : categories
 permalink : /categories/
 author_profile : true
