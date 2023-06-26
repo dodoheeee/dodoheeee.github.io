@@ -1,17 +1,15 @@
 ---
 layout: single
-title: 자바스크립트 비트 연산자
+title: 자바스크립트 비트 연산자 알고 쓰기!
 subtitle: 무심코 썼던 것들을 다시 익혀보자!
 tags: [자바스크립트]
 toc : false
 categories: Javascript
 author_profile: false
-sidebar:
-    nav: "docs"
 sitemap: true
 toc: true
 header:
-  teaser: https://www.biteinteractive.com/wp-content/uploads/2021/05/git-vs-github.png
+  teaser: https://miro.medium.com/v2/resize:fit:1400/1*ahpxPO0jLGb9EWrY2qQPhg.jpeg
 
 ---
 
@@ -20,8 +18,8 @@ header:
 
 
 <p align="center"  style="color:#8E99AB; font-size :18px">안녕하세요! 도도히 입니다! <br/>회사에서 필터 기능을 만들때마다 아주 자주 다뤘던 연산자인데<br/>
-제대로 익히지 않고 쓰다보니, 오랜만에 보니까 누가 물어봤을때 "어..? 뭐더라" 해버렸습니다.<br/>
-찾아보니, 자바스크립트에서 꽤나 중요한 부분이라 이건 블로그감이다! 하고 블로그를 쓰러 찾아왔습니다.</p>
+제대로 익히지 않고 쓰다보니, 오랜만에 보니까 물어봤을때 "어..? 뭐더라" 하고 설명을 못해버렸어요😞<br/>
+자바스크립트에서 꽤나 중요한 부분이라 이건 블로그감이다! 하고 블로그를 쓰러 찾아왔습니다😋</p>
 
 
 <br/>
@@ -30,189 +28,175 @@ header:
 
 <br/>
 
+먼저 비트 연산자를 알아보기 전에! 과연 우리는 비트에 대해서 잘 알고 있을까?
 
-# Git 이란?
+# 📌 비트 (bit)
 
-명령어를 살펴보기 전, 먼저 git 에 대해서 다시 숙지를 해보자!
+> 컴퓨터에서 사용하는 가장 작은 데이터 단위.<br/> 하나의 비트는 2진수 1 또는 0으로 표현되어 데이터를 처리, 저장, 전송 할 때 사용된다.
 
-> 형상 관리 도구 (Configuration Management Tool) 중 하나.<br/>쉬운 말로 버전 관리 시스템 중 하나이다.
-
-Git은 소프트웨어를 개발하는 기업의 핵심 자산인 소스코드를 효과적으로 관리할 수 있게 해주는 무료, 공개 소프트웨어이다.
-
-
-## 특징
-
-### 1. Distributed development
-* 전체 개발 이력을 각 개발자의 로컬환경에 복사본을 제공, 변경된 이력을 다시 하나의 저장소로 복사.
-* 이러한 변경은 추가 개발지점을 가져와, 로컬 개발 지점과 동일하게 병합 가능.
-* 저장소는 git protocol 및 http로 쉽고 효율적으로 접근 가능.
-
-### 2. Strong support for non-linear development
-
-* 신속하고 편리한 branch , merge 지원
-* 비선형(여러갈래) 개발 이력을 시각화하고 탐색 할 수 있는 강력한 도구 제공.
+bit는 binart digit의 약자이다.<br/>
+컴퓨터는 전자 스위치로 구성된 전기 장치라서,<br/>
+전자식 스위치를 이용해서 데이터를 전달하는 것이 기본적이다.<br/>
+컴퓨터는 단순 전기적 신호에 대해서만 반응하기 때문에 on / off (1 또는 0) 으로 해석할 수 있다.
 
 
-### 3. Efficient handling of large projects
-
-* 매우 빠르고, 대형 프로젝트나 이력이 많은 작업에 매우 합리적.
-* 일부 작업에선 더 빠르며, 다른 버전 관리 시스템보다 빠르게 요청 가능.
-
-
-### 4. Cryptographic authentication of history
-
-* git의 이력은 성공한 개발이력의 commit에 의해 저장.
-* 배포 후엔, 예전 버전으로 변경하는 것은 불가능.
-* 예전 버전을 암호화 가능.
-
-### 5. Toolkit design
-
-* GIT은 C로 작성된 많은 소규모 도구 모음.
-* 많은 스크립트들이 기능 보강을 제공. 
-* Git은 새로운 기발한 작업을 위한 손쉬운 사용과 쉬운 스크립팅을 위한 도구를 제공.
-  
-
-## 장점
-
-* 같은 파일을 여러 명이 동시에 작업하는 병렬 개발 가능.
-* 브랜치를 통해 개발 후, 본 프로젝트에 합치는 방식(Merge)의 개발 가능.
-* 분산 버전관리이기 때문에 인터넷이 연결되지 않은 곳에서도 개발 가능.
-* 중앙 저장소가 날라가도 원상복구가 가능.
-* 팀 프로젝트가 아닌, 개인 프로젝트여도 git을 통해 버전을 관리하면 체계적인 개발 가능.
-* 프로그램 패치, 배포하는 과정도 간단하게 개발 가능.
+그래서! 컴퓨터는 의사소통을 할때, 두가지의 상태 2진수의 0 과 1 형태만 이해하고 사용할 수 있다.<br/>
+이 형태를 2진수라고 부르거나, 비트(Bit)라고 부른다.<br/>
 
 <br/>
 
-# 🤷🏻‍♀️ Git Github 차이
+# 📌  비트 연산자
 
-> - Git : 형상 관리 도구(버전 관리 시스템)<br/> 
-- Github : 형상 관리 도구(버전 관리) 웹호스팅 서비스
+> 비트 연산자(bitwise operator)는 논리 연산자와 비슷하지만, 비트(bit) 단위로 논리 연산을 수행합니다.
 
-Git은 프로젝트를 진행하면서, 소스코드들의 변경 정보를 관리할때 사용한다고 이해하면 쉽다.
-Github은 그 소스코드의 변경 정보를 관리할 저장소(서버)를 제공해준다고 이해하면 쉽다.
+## 비트 연산자 종류
 
-Github은 버전 관리 시스템을 지원하는 웹 호스팅 서비스의 기능을 통해,<br/>
-`push` , `pull request` 이벤트에 반응하여 자동으로 작업(배포 등)을 실행할 수 있다. 
+![ex_screenshot](/assets/images/0626/1.png)
 
-ex) GitHub, GitLab, BitBucket
+### AND 연산자(&)
+> A, B 값이 둘다 1이어야 1을 출력.
 
-<br/>
+비트 AND 연산자는 대응되는 두 비트가 모두 1일 때만 1을 반환하며, 다른 경우는 모두 0을 반환한다.
 
-## 💡 Git 사용시 필수 용어
+![ex_screenshot](/assets/images/0626/2.png)
 
-### Repository
-> 저장소를 의미. 저장소는 히스토리, 태그, 소스, branch에 따라 버전을 저장한다.
+### OR 연산자(|)
 
-저장소를 통해 작업자가 변경한 모든 히스토리를 확인 할 수 있다.
+> A, B 값이 둘 중 하나가 1이면 1을 출력.
 
-### Working Tree
-> 저장소를 어느 한 시점을 바라보는 작업자의 현재 시점.
+비트 OR 연산자는 대응되는 두 비트 중 하나라도 1이면 1을 반환하며, 두 비트가 모두 0일 때만 0을 반환한다.
+
+![ex_screenshot](/assets/images/0626/3.png)
+
+### XOR 연산자(^)
+
+> A, B 값이 서로 다르면 1을 출력.
+
+비트 XOR 연산자는 대응되는 두 비트가 서로 다르면 1을 반환하고, 서로 같으면 0을 반환한다.
+
+![ex_screenshot](http://www.tcpschool.com/lectures/img_php_bitwise_xor.png)
 
 
-### Staging Area
-> 저장소에 커밋하기 전에 커밋을 준비하는 위치.
+### NOT 연산자(~)
 
-### Commit
-> 현재 변경된 작업 상태를 점검. 저장소에 저장하는 작업
+> 비트 값이 0이면 1을 출력. 1이면 0을 출력.
 
-### Head
-> 현재 작업중인 Branch를 가르킴.
+비트 NOT 연산자는 해당 비트가 1이면 0을 반환하고, 0이면 1을 반환한다.
 
-### Branch
-> 가지 또는 분기점을 의미.
-
-작업 할때는 현재 상태를 복사하여, Branch애서 작업을 한 후 완전하다 싶을 때 Merge를 하여 작업을 한다.
-
-### Merge
-> 다른 Branch의 내용을 현재 Branch로 가져와 합치는 작업
-
-### 😋 Real 간단 요약
-A와 B가 같은 프로젝트를 작업할때<br/>
-master / main 이 프로젝트의 기준점.<br/>
-master 나 main 에서 각 A 와 B 의 분기점(branch) 를 생성해줌.<br/>
-작업이 완료 된 브랜치는, master에 "내 코드 합쳐줘" 라는 merge 작업 진행.
-
+![ex_screenshot](http://www.tcpschool.com/lectures/img_php_bitwise_not.png)
 
 <br/>
 
-# 👀 Git 명령어 살펴보기
+# 💡 비트연산자로 다중 선택 filter 구현하기!
 
-### git init
+나는 일반 1개만 클릭하는 필터일땐, 비트연산자를 활용해서 필터를 구현하지 않는 편이다.<br/>
+그런데, 다중 선택일 경우엔 비트 연산자 방법을 한번만 익히면 활용하기 편리하고 쉽다.<br/>
+다만 비트와,비트연산자에 대해서 잘 모른다면 방법이 조금 까다로울 수 있다.<br/>
 
-> git을 다루고 싶은 폴더에서 git을 셋팅을 하는 준비를 한다.
+**⚠️ 주의 ⚠️**<br/>
+서버가 필터 타입을 number로 관리할때 사용하기 편리하다!<br/>
+서버가 string 타입으로 필터를 관리한다면, 이 방법은 좋지 않을수도?!
 
-### git clone `복사한 레포 주소`
+## 1. 필터타입을 정의해준다.
 
-> 원격 레포지토리의 저장소를 로컬 컴퓨터로 복제한다.
+나는 타입스크립트를 사용해서 개발을 했기 때문에<br/>
+타입스크립트의 `enum` 기능을 사용해서<br/>
+각 필터 타입에 이진수 값을 기반으로 한 숫자값을 정의해줬다.<br/>
 
-### git add .
+```javascript
+export enum FilterType {
+    NONE = 0, //아무것도 선택 안됐을때,
+    COMPLETION = 1, //완료
+    INCORRECT = 2, //금액이 맞지 않음
+    NOTISSUED = 4, // 미완료
+    ALL = 7, // 전체 선택 (COMPLETION,INCORRECT,NOTISSUED 합산 값)
+}
+```
 
-> 모든 파일이나, 변경 내용을 스테이징 영역(작업중인 영역)에 추가한다.
+## 2. view에 다중필터를 만들어준다.
 
-### git commit `저장 내용`
+체크박스의 state값의 조건식을 clickFilter에서 구현했던 식 그대로 사용하고,<br/>
+체크박스를 클릭했을때의 함수실행시에 Argument값에 (클릭한 필터 값)을 넣어주면 된다!<br/>
 
-> 스테이징 영역(작업중인 영역)의 추가된 파일을 저장시킨다.
+```html
+<UI.Widgets.Filter.BasicFilter
+  filterOptions={[
+      {
+          value: "완료",
+          state:
+              (filterStatus & FilterType.COMPLETION) === FilterType.COMPLETION,
+          onClick: () => clickFilter(FilterType.COMPLETION),
+      },
+      {
+          value: "금액 상이",
+          state:
+              (filterStatus & FilterType.INCORRECT) === FilterType.INCORRECT,
+          onClick: () => clickFilter(FilterType.INCORRECT),
+      },
+      {
+          value: "미발행",
+          state:
+              (filterStatus & FilterType.NOTISSUED) === FilterType.NOTISSUED,
+          onClick: () => clickFilter(FilterType.NOTISSUED),
+      },
+  ]}
+/>
+```
 
-### git push origin `내 브랜치 명 or master`
+## 3. 필터를 관리할 함수를 만들어준다.
 
-> 로컬에 커밋된 내용들을 repository로 올린다.
+```javascript
+ clickFilter: (clickedFilterType: FilterType) => {
+    if ((filteredStatus & clickedFilterType) === clickedFilterType) {
+        setFilteredStatus(filteredStatus - clickedFilterType)
+    } else {
+        setFilteredStatus(filteredStatus + clickedFilterType)
+    }
+},
+```
 
-### git pull origin `내 브랜치 명 or master`
+`clickFilter` 함수를 살펴보면, Parameter 값으로 클릭한 `filterType`이 들어온다.
 
-> repository에 올라가져 있는 내용들을 로컬로 가져온다.
+`if ((filteredStatus & clickedFilterType) === clickedFilterType)` 조건을 해석해야 필터를 구현할 수 있다.
 
-### git branch `내가 만들 브랜치명`
+지금 내가 쓴 코드에선 비트연산자 중에 AND 연산자를 사용한 것이다.<br/>
+현재 filterStatus 의 초기값이 7 (ALL 전체선택) 이고,<br/>
+클릭한 필터의 값을 1 (COMPLETION 완료) 를 눌렀다고 예시를 들어보자.<br/>
 
-> head 기준으로 branch 를 생성한다.
+### 🎙 해석
 
-* git branch -m `현재 브랜치명` `바꿀 브랜치명` : 브랜치 이름 바꾸기
-* git branch -D `브랜치명` : 브랜치 삭제
+만약 `7 & 1 === 1` 이라면 <br/>
+현재 `필터타입 - 클릭한 필터타입` 으로 필터 state값을 변경해주고,<br/>
+아니라면, `필터타입 + 클릭한 필터타입` 으로 필터 state값을 변경해줘.<br/>
 
-### git checkout `이동할 브랜치명`
 
-> 다른 브랜치로 이동한다.
+### ✏️ 이진법 계산
 
-* git checkout -b `브랜치명` : 브랜치 생성 후 생성한 브랜치로 이동
+일단 계산을 할때 2진수의 자리마다의 값이 의미하는 것을 알아야한다.
 
-### git merge `합칠 브랜치 명 or master`
+![ex_screenshot](https://mblogthumb-phinf.pstatic.net/MjAyMDA2MTBfMzUg/MDAxNTkxNzg3NTE5OTA4.qeyWttB5ROGwxjIVn_IWU-qzldk8hlzBF-eI0Lw8ZTIg.hy2tt_G040Xv9AbmuhcSosklJVqgyFDqaS4UDnUNvYkg.PNG.skyboy7863/image.png?type=w800)
 
-> HEAD 브랜치에 합칠 브랜치 or master 내용을 병합한다.
+10진수를 이진수로 표현하면 아래 값 처럼 나온다. <br/>
 
-### git status
+A : 7 => 111 <br/>
+B : 1 => 001 <br/>
 
-> 현재 Git 프로젝트의 명령어를 확인합니다.
+자 이제 우리가 위에서 배웠던 AND 연산자대로 계산을 한다면 <br/>
+**001이 출력**된다.
 
-현재 master 브랜치로 체크아웃 되어 있으며, 커밋 내역이 없다는 내용입니다.
+001을 2진수 자리가 뜻하는 대로 계산을 해보면<br/>
+왼쪽 부터 첫번째 1 , 두번째 0 , 세번째 0<br/>
+**합산하면 1**이다.<br/>
 
-### git log
 
-> commit 히스토리를 표시한다.
+## 4. 결과
 
-### git remote add origin `복사한 레포 주소`
+처음 초기값이 모두 선택된 All 상태일때,<br/>
+1개의 필터값을 선택하게 된다.<br/>
+필터값에 대한 state값이 변경되면,<br/>
+뷰는 변한 state값으로 체크뱍스의 상태값을 그려주게 된다.<br/>
 
-> 로컬로 작업한 프로젝트를 repository에 연결하여 관리합니다. 
-
-repository를 먼저 만들어놓지 않고 로컬환경에서 프로젝트를 만들어 작업한 경우에 사용된다.
-만들어놓은 프로젝트 있다면
-깃헙에서 프로젝트를 저장할 repository 를 생성해준다.
-로컬에 만들어놓은 프로젝트 폴더에서 터미널을 켜고
-git init으로 깃 셋팅을 시작한다.
-git remote add origin `레포 주소` 로 내 프로젝트와 레포지토리를 이어준다.
-
-### git reset --hard `커밋 id` 
-
-> 특정 commit 시점으로 되돌리기
-
-이미 conflict 해결하고 Push 까지 한 상황인데 실행했더니
-confilct 해결을 잘못해서, 화면이 켜지지 않는다 or 에러가 말도안되게 날 경우에
-다시 conflict 해결하기 전 시점으로 돌아가서 다시 conflict을 해결하는 편이엇다.
-
-### git merge --abort
-
-> merge 취소하기
-
-merge 후 conflict이 나버리면, 해결 전엔 이탈하지 못한다....😣
-그래서 conflict이 난 후, 커밋을 하기 전 상태라면, 해당 명령어로 머지 시작 전으로 돌아가버린다.
+![ex_screenshot](/assets/images/0626/5.png)
 
 
 <br/>
@@ -222,7 +206,9 @@ merge 후 conflict이 나버리면, 해결 전엔 이탈하지 못한다....😣
 *** 
 
 
-> [참고자료](https://goddaehee.tistory.com/91)
+> [참고자료1](http://www.tcpschool.com/javascript/js_operator_bitwise)<br/>
+[참고자료2](https://mindnet.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-1%ED%8E%B8-Bit-%EC%99%80-Byte-%EC%B0%A8%EC%9D%B4%EC%A0%90)<br/>
+[참고자료3](https://devtry.tistory.com/entry/%EB%B9%84%ED%8A%B8-%EC%97%B0%EC%82%B0%EC%9E%90AND-OR-XOR-NOT)
 <p align="center"  style="color:#8E99AB; font-size :18px">
 
 

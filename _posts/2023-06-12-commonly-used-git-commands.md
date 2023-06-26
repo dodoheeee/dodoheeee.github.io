@@ -6,8 +6,6 @@ tags: [깃]
 toc : false
 categories: Git
 author_profile: false
-sidebar:
-    nav: "docs"
 sitemap: true
 header:
   teaser: https://www.biteinteractive.com/wp-content/uploads/2021/05/git-vs-github.png

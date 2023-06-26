@@ -8,8 +8,6 @@ toc_label: "목차"
 toc_sticky : true
 categories: React
 author_profile: false
-sidebar:
-    nav: "docs"
 sitemap: true
 header:
   teaser: /assets/images/0606/1.png
