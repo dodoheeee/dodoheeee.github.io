@@ -209,12 +209,12 @@ B : 1 => 001 <br/>
 > [참고자료1](http://www.tcpschool.com/javascript/js_operator_bitwise)<br/>
 [참고자료2](https://mindnet.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-1%ED%8E%B8-Bit-%EC%99%80-Byte-%EC%B0%A8%EC%9D%B4%EC%A0%90)<br/>
 [참고자료3](https://devtry.tistory.com/entry/%EB%B9%84%ED%8A%B8-%EC%97%B0%EC%82%B0%EC%9E%90AND-OR-XOR-NOT)
-<p align="center"  style="color:#8E99AB; font-size :18px">
 
 
 
 
-블로그까지 찾아와주신 분들에게 도움이 되었음 좋겠습니다!🙇‍♀️ </p>
+
+<p align="center"  style="color:#8E99AB; font-size :18px">블로그까지 찾아와주신 분들에게 도움이 되었음 좋겠습니다!🙇‍♀️ </p>
 
 
 
