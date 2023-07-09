@@ -3,7 +3,8 @@ layout: single
 title: 자바스크립트 비트 연산자 알고 쓰기!
 subtitle: 무심코 썼던 것들을 다시 익혀보자!
 tags: [자바스크립트]
-toc : false
+toc: true
+toc_label: "목차"
 categories: Javascript
 author_profile: false
 sitemap: true
@@ -16,15 +17,13 @@ header:
 <br/>
 <br/>
 
-
 <p align="center"  style="color:#8E99AB; font-size :18px">안녕하세요! 도도히 입니다! <br/>회사에서 필터 기능을 만들때마다 아주 자주 다뤘던 연산자인데<br/>
 제대로 익히지 않고 쓰다보니, 오랜만에 보니까 물어봤을때 "어..? 뭐더라" 하고 설명을 못해버렸어요😞<br/>
 자바스크립트에서 꽤나 중요한 부분이라 이건 블로그감이다! 하고 블로그를 쓰러 찾아왔습니다😋</p>
 
-
 <br/>
 
-***
+---
 
 <br/>
 
@@ -39,13 +38,12 @@ bit는 binart digit의 약자이다.<br/>
 전자식 스위치를 이용해서 데이터를 전달하는 것이 기본적이다.<br/>
 컴퓨터는 단순 전기적 신호에 대해서만 반응하기 때문에 on / off (1 또는 0) 으로 해석할 수 있다.
 
-
 그래서! 컴퓨터는 의사소통을 할때, 두가지의 상태 2진수의 0 과 1 형태만 이해하고 사용할 수 있다.<br/>
 이 형태를 2진수라고 부르거나, 비트(Bit)라고 부른다.<br/>
 
 <br/>
 
-# 📌  비트 연산자
+# 📌 비트 연산자
 
 > 비트 연산자(bitwise operator)는 논리 연산자와 비슷하지만, 비트(bit) 단위로 논리 연산을 수행합니다.
 
@@ -54,6 +52,7 @@ bit는 binart digit의 약자이다.<br/>
 ![ex_screenshot](/assets/images/0626/1.png)
 
 ### AND 연산자(&)
+
 > A, B 값이 둘다 1이어야 1을 출력.
 
 비트 AND 연산자는 대응되는 두 비트가 모두 1일 때만 1을 반환하며, 다른 경우는 모두 0을 반환한다.
@@ -75,7 +74,6 @@ bit는 binart digit의 약자이다.<br/>
 비트 XOR 연산자는 대응되는 두 비트가 서로 다르면 1을 반환하고, 서로 같으면 0을 반환한다.
 
 ![ex_screenshot](http://www.tcpschool.com/lectures/img_php_bitwise_xor.png)
-
 
 ### NOT 연산자(~)
 
@@ -119,28 +117,13 @@ export enum FilterType {
 체크박스를 클릭했을때의 함수실행시에 Argument값에 (클릭한 필터 값)을 넣어주면 된다!<br/>
 
 ```html
-<UI.Widgets.Filter.BasicFilter
-  filterOptions={[
-      {
-          value: "완료",
-          state:
-              (filterStatus & FilterType.COMPLETION) === FilterType.COMPLETION,
-          onClick: () => clickFilter(FilterType.COMPLETION),
-      },
-      {
-          value: "금액 상이",
-          state:
-              (filterStatus & FilterType.INCORRECT) === FilterType.INCORRECT,
-          onClick: () => clickFilter(FilterType.INCORRECT),
-      },
-      {
-          value: "미발행",
-          state:
-              (filterStatus & FilterType.NOTISSUED) === FilterType.NOTISSUED,
-          onClick: () => clickFilter(FilterType.NOTISSUED),
-      },
-  ]}
-/>
+<UI.Widgets.Filter.BasicFilter filterOptions={[ { value: "완료", state:
+(filterStatus & FilterType.COMPLETION) === FilterType.COMPLETION, onClick: () =>
+clickFilter(FilterType.COMPLETION), }, { value: "금액 상이", state:
+(filterStatus & FilterType.INCORRECT) === FilterType.INCORRECT, onClick: () =>
+clickFilter(FilterType.INCORRECT), }, { value: "미발행", state: (filterStatus &
+FilterType.NOTISSUED) === FilterType.NOTISSUED, onClick: () =>
+clickFilter(FilterType.NOTISSUED), }, ]} />
 ```
 
 ## 3. 필터를 관리할 함수를 만들어준다.
@@ -169,7 +152,6 @@ export enum FilterType {
 현재 `필터타입 - 클릭한 필터타입` 으로 필터 state값을 변경해주고,<br/>
 아니라면, `필터타입 + 클릭한 필터타입` 으로 필터 state값을 변경해줘.<br/>
 
-
 ### ✏️ 이진법 계산
 
 일단 계산을 할때 2진수의 자리마다의 값이 의미하는 것을 알아야한다.
@@ -188,7 +170,6 @@ B : 1 => 001 <br/>
 왼쪽 부터 첫번째 1 , 두번째 0 , 세번째 0<br/>
 **합산하면 1**이다.<br/>
 
-
 ## 4. 결과
 
 처음 초기값이 모두 선택된 All 상태일때,<br/>
@@ -198,24 +179,15 @@ B : 1 => 001 <br/>
 
 ![ex_screenshot](/assets/images/0626/5.png)
 
-
 <br/>
 <br/>
 
-
-*** 
-
+---
 
 > [참고자료1](http://www.tcpschool.com/javascript/js_operator_bitwise)<br/>
-[참고자료2](https://mindnet.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-1%ED%8E%B8-Bit-%EC%99%80-Byte-%EC%B0%A8%EC%9D%B4%EC%A0%90)<br/>
-[참고자료3](https://devtry.tistory.com/entry/%EB%B9%84%ED%8A%B8-%EC%97%B0%EC%82%B0%EC%9E%90AND-OR-XOR-NOT)
-
-
-
-
+> [참고자료2](https://mindnet.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-1%ED%8E%B8-Bit-%EC%99%80-Byte-%EC%B0%A8%EC%9D%B4%EC%A0%90)<br/>
+> [참고자료3](https://devtry.tistory.com/entry/%EB%B9%84%ED%8A%B8-%EC%97%B0%EC%82%B0%EC%9E%90AND-OR-XOR-NOT)
 
 <p align="center"  style="color:#8E99AB; font-size :18px">블로그까지 찾아와주신 분들에게 도움이 되었음 좋겠습니다!🙇‍♀️ </p>
-
-
 
 <br/><br/>
