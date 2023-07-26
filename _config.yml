@@ -16,11 +16,11 @@ minimal_mistakes_skin: "contrast" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale: "ko-KR"
-title: "끄적끄적"
+title: "개발자국"
 title_separator: "|"
 subtitle: "dodohee dev-blog"
 name: "dodohee"
-description: "안녕하세요 도도히가 열심히 끄쩍끄적 쓰는 블로그입니다."
+description: "안녕하세요. 최대한 이해하기 쉽도록 쓰려고 노력하고 있는 도도히 개발 블로그입니다."
 url: "https://dodoheeee.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
 repository: # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -105,7 +105,7 @@ analytics:
 author:
   name: "도도히"
   avatar: "/assets/images/dodo.png"
-  bio: "열심히 끄적끄적 쓰고 있는 블로그입니다."
+  bio: "안녕하세요. 도도히 개발 블로그입니다."
   location: "Paju-si, Gyeonggi-do"
   email: #hiyoun96@naver.com
   links:
