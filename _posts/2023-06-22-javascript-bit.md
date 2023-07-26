@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 자바스크립트 비트 연산자 알고 쓰기!
+title: 자바스크립트 비트연산자 알고 쓰기!
 subtitle: 무심코 썼던 것들을 다시 익혀보자!
 tags: [자바스크립트]
 toc: true
