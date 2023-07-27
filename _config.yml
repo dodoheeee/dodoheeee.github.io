@@ -16,7 +16,7 @@ minimal_mistakes_skin: "contrast" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale: "ko-KR"
-title: "개발자국"
+title: "도도네 개발블로그"
 title_separator: "|"
 subtitle: "dodohee dev-blog"
 name: "dodohee"
@@ -25,7 +25,7 @@ url: "https://dodoheeee.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
 repository: # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser: "/assets/images/dodo.png"
-logo: "/assets/images/favicon-16x16.png"
+logo: "favicon.ico"
 masthead_title: # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs: true # true, false (default)
 words_per_minute: 200
@@ -105,7 +105,7 @@ analytics:
 author:
   name: "도도히"
   avatar: "/assets/images/dodo.png"
-  bio: "안녕하세요. 도도히 개발 블로그입니다."
+  bio: "Web Frontend Developer"
   location: "Paju-si, Gyeonggi-do"
   email: #hiyoun96@naver.com
   links:
